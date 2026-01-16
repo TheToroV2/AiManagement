@@ -1,4 +1,4 @@
-#AI Assistant Management App
+# AI Assistant Management App
 
 Aplicación web para la gestión, entrenamiento y simulación de asistentes de IA.
 Permite crear, editar, entrenar y chatear con asistentes de forma simulada.
