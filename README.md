@@ -1,142 +1,126 @@
 # AI Assistant Management App
 
-Aplicación web para la gestión, entrenamiento y simulación de asistentes de IA.
-Permite crear, editar, entrenar y chatear con asistentes de forma simulada.
+Web application for managing, training, and simulating AI assistants.  
+Allows users to create, edit, train, and chat with assistants in a simulated environment.
 
-Instrucciones para correr el proyecto
-Requisitos
+---
 
-Node.js v18+
+## How to run the project
 
-npm o yarn
+### Requirements
+- Node.js v18+
+- npm or yarn
 
-Pasos
-# Clonar el repositorio
-git clone <url-del-repositorio>
-
-# Entrar al proyecto
+### Steps
+```bash
+git clone <repository-url>
 cd aimanagement
-
-# Instalar dependencias
 npm install
-
-# Ejecutar en desarrollo
 npm run dev
+```
+The application will be available at:  
+http://localhost:3000
 
+---
 
-La aplicación estará disponible en:
- http://localhost:3000
+## Technical decisions
 
- Decisiones técnicas
- Stack utilizado
+### Tech stack
 
-Next.js (App Router)
-Para routing moderno, SSR/CSR y estructura escalable.
+- **Next.js (App Router)**  
+  Used for modern routing, SSR/CSR support, and scalable project structure.
 
-TypeScript
-Para tipado estricto y detección temprana de errores.
+- **TypeScript**  
+  Provides strict typing and early error detection.
 
-Zustand
-Manejo de estado global de UI y estado del cliente (modal, asistente seleccionado, chat simulado).
+- **Zustand**  
+  Manages global UI state and client-side state such as modals, selected assistant, and simulated chat.
 
-TanStack React Query
-Manejo de estado del servidor (fetch, create, update, delete de asistentes).
+- **TanStack React Query**  
+  Handles server state (fetch, create, update, delete assistants).
 
-Mock Services (in-memory)
-Simulan una API real sin necesidad de backend.
+- **Mock Services (in-memory)**  
+  Simulates a backend API without requiring a real server.
 
- Separación de responsabilidades
+---
 
-React Query → Server State (asistentes CRUD)
+## Separation of responsibilities
 
-Zustand → UI State + estado local (chat, selección, modales)
+- **React Query**  
+  Server state management (assistant CRUD operations).
 
-Services → Lógica asíncrona simulada
+- **Zustand**  
+  UI state and client-side state (modals, selected assistant, chat history).
 
-Components → UI reutilizable
+- **Services**  
+  Asynchronous logic and API simulation.
 
- Esta separación permite escalar fácilmente a una API real.
+- **Components**  
+  Reusable UI components and presentation logic.
 
- Características implementadas
- Gestión de Asistentes
+This separation allows the project to scale easily and migrate to a real backend.
 
-Listado de asistentes
+---
 
-Creación de asistentes
+## Implemented features
 
-Edición de asistentes
+### Assistant management
+- Assistant listing
+- Create assistant
+- Edit assistant
+- Delete assistant
+- Reusable modal for create and edit
 
-Eliminación de asistentes
+### Training page (`/assistant/[id]`)
+- Displays assistant information
+- Text area to edit training rules / prompts
+- Save button with loading state
+- Success message after saving
+- Client-side persistence of training data
 
-Modal reutilizable (create / edit)
+### Simulated chat
+- Independent chat per assistant
+- User and assistant messages
+- Simulated assistant responses with 1–2 second delay
+- Visual typing indicator
+- Reset conversation functionality
 
- Página de Entrenamiento (/assistant/[id])
+---
 
-Información del asistente
+## Prioritization and limitations
 
-Edición de reglas (training / prompt)
+### Not implemented
+- Real database persistence
+- Authentication and authorization
+- Advanced UI framework or design system
 
-Guardado con estado de carga
+### Reason
+Priority was given to:
+- Clean and scalable architecture
+- Clear separation between server state and UI state
+- Fully functional user flows
+- Clean, readable, and strongly typed code
 
-Mensaje de éxito al guardar
+These decisions make the project easy to extend in future phases.
 
- Chat Simulado
+---
 
-Chat por asistente
+## Approximate time spent
 
-Mensajes de usuario y asistente
+Between **12 and 16 hours**, including:
+- Architecture design
+- Global state management
+- Assistant CRUD implementation
+- Training page development
+- Simulated chat implementation
+- TypeScript refinements and structure cleanup
 
-Respuestas simuladas con delay (1–2 segundos)
+---
 
-Indicador de “escribiendo…”
+## Final notes
 
-Reinicio de conversación
-
- Priorización y limitaciones
- Funcionalidades no implementadas
-
-Persistencia real en base de datos
-
-Autenticación de usuarios
-
-Diseño visual avanzado (UI framework)
-
- Motivo
-
-Se priorizó:
-
-Arquitectura correcta
-
-Separación clara de estados
-
-Flujo completo funcional
-
-Código limpio y tipado
-
-Estas decisiones permiten que el proyecto sea fácilmente escalable en una siguiente fase.
-
- Tiempo aproximado de dedicación
-
-Entre 12 y 16 horas, distribuidas en:
-
-Diseño de arquitectura
-
-Implementación de estado global
-
-CRUD de asistentes
-
-Página de entrenamiento
-
-Chat simulado
-
-Ajustes de TypeScript y estructura
-
- Notas finales
-
-Este proyecto está preparado para:
-
-Conectarse a una API real
-
-Persistir datos en backend
-
-Integrar un motor real de IA
+This project is prepared for:
+- Integration with a real backend API
+- Database persistence
+- Authentication and user management
+- UI improvements using a design system
